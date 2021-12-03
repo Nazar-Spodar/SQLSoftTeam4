@@ -2,35 +2,36 @@ USE team4;
 DROP TABLE IF EXISTS user;
 CREATE TABLE user
 (
-    user_id          INT PRIMARY KEY AUTO_INCREMENT,
-    first_name       VARCHAR(100) NOT NULL,
-    middle_name      VARCHAR(100),
-    last_name        VARCHAR(100) NOT NULL,
-    bate_of_birth    DATE         NOT NULL,
-    user_password    VARCHAR(100) NOT NULL,
-    date_registation DATE         NOT NULL,
-    email            VARCHAR(100) NOT NULL
+    userId          INT PRIMARY KEY AUTO_INCREMENT,
+    firstName       VARCHAR(100) NOT NULL,
+    middleName      VARCHAR(100),
+    lastName        VARCHAR(100) NOT NULL,
+    dateOfBirthday    DATE         NOT NULL,
+    userPassword    VARCHAR(100) NOT NULL,
+    dateRegistation DATE         NOT NULL,
+    email            VARCHAR(100) NOT NULL,
+    userType VARCHAR (255) NOT NULL
 );
 
 DROP TABLE IF EXISTS book;
 CREATE TABLE book
 (
-    book_id     INT PRIMARY KEY AUTO_INCREMENT,
-    book_title  VARCHAR(100) NOT NULL,
-    main_author VARCHAR(100) NOT NULL,
-    co_author   VARCHAR(100),
-    amount      INT          NOT NULL
+    bookId     INT PRIMARY KEY AUTO_INCREMENT,
+    bookTitle  VARCHAR(100) NOT NULL,
+    mainAuthor VARCHAR(100) NOT NULL,
+    coAuthor   VARCHAR(100),
+    amount      INTNOT NULL
 );
 
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders
 (
-    order_id  INT PRIMARY KEY AUTO_INCREMENT,
-    user_id   INT  NOT NULL,
-    book_id   INT  NOT NULL,
-    from_date DATE NOT NUll,
-    to_date   DATE NOT NUll,
-    is_active TINYINT(1) NOT NULL
+    orderId  INT PRIMARY KEY AUTO_INCREMENT,
+    userId   INT  NOT NULL,
+    bookId   INT  NOT NULL,
+    fromDate DATE NOT NUll,
+    toDate   DATE NOT NUll,
+    isActive TINYINT(1) NOT NULL
 );
 
 DROP TABLE IF EXISTS reader;
